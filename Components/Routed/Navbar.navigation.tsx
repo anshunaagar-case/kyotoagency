@@ -6,14 +6,46 @@ import {
   NavbarContent,
   NavbarItem,
   Button,
+  NavbarMenuToggle,
+  NavbarMenu,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../Shared/AcmeLogo.tsx";
 import { usePathname } from "next/navigation";
 
-const NavbarNavigation = (props: any) => {
+const ResponsiveNavbarToggle = (props: any) => {
   return (
     <>
-      <Navbar>
+      <NavbarContent className="sm:hidden" justify="start">
+        <NavbarMenuToggle
+          aria-label={props.isMenuOpen ? "Close menu" : "Open menu"}
+        />
+      </NavbarContent>
+      <NavbarMenu>
+        {props.navigationLinks.map((item: any) => {
+          return (
+            <NavbarItem
+              key={item.name}
+              className={`${
+                usePathname() === item.link ? "navLinkActive" : ""
+              }`}
+            >
+              <Link href={item.link}>{item.name}</Link>
+            </NavbarItem>
+          );
+        })}
+      </NavbarMenu>
+    </>
+  );
+};
+const NavbarNavigation = (props: any) => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  return (
+    <>
+      <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+        <ResponsiveNavbarToggle
+          navigationLinks={props.navigationLinks}
+          isMenuOpen={isMenuOpen}
+        />
         <NavbarBrand>
           <AcmeLogo />
           <p className="font-bold text-inherit">Kyoto</p>
@@ -34,10 +66,19 @@ const NavbarNavigation = (props: any) => {
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
+            <Link href="#" className="font-semibold text-inherit text-purple-700">
+              Login
+            </Link>
           </NavbarItem>
           <NavbarItem>
-            <Button as={Link} color="primary" href="#" variant="flat">
+            <Button
+              as={Link}
+              color="secondary"
+              suppressContentEditableWarning
+              suppressHydrationWarning
+              href="#"
+              variant="flat"
+            >
               Sign Up
             </Button>
           </NavbarItem>
