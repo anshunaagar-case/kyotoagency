@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import { Inter } from "next/font/google";
 import { NextUIProvider } from "@nextui-org/react";
 import NavbarNavigation from "../../Components/Routed/Navbar.navigation";
+import DevelopmentAlertBanner from '../../Components/Shared/Component/Banner.dev.tsx';
 
 const inter = Inter({ subsets: ["latin"] });
 export default function App({ Component, pageProps }: AppProps) {
@@ -32,6 +33,10 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
+      <div className="development-informative-section">
+        {/* to be deleted when the application developmentw will be completed! */}
+        <DevelopmentAlertBanner />
+      </div>
       <NextUIProvider>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavbarNavigation navigationLinks={navbarLinkObject} />
