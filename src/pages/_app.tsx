@@ -7,6 +7,24 @@ import NavbarNavigation from "../../Components/Routed/Navbar.navigation";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function App({ Component, pageProps }: AppProps) {
+  const navbarLinkObject = [
+    {
+      link: "/",
+      name: "Features",
+    },
+    {
+      link: "/",
+      name: "Customers",
+    },
+    {
+      link: "/",
+      name: "Integrations",
+    },
+    {
+      link: "/",
+      name: "Services ⭐",
+    },
+  ];
   return (
     <>
       <style jsx global>{`
@@ -16,7 +34,7 @@ export default function App({ Component, pageProps }: AppProps) {
       `}</style>
       <NextUIProvider>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-         <NavbarNavigation />
+          <NavbarNavigation navigationLinks={navbarLinkObject} />
           <Component {...pageProps} />
         </ThemeProvider>
       </NextUIProvider>
