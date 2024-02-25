@@ -20,7 +20,7 @@ const ResponsiveNavbarToggle = (props: any) => {
           aria-label={props.isMenuOpen ? "Close menu" : "Open menu"}
         />
       </NavbarContent>
-      <NavbarMenu>
+      <NavbarMenu className="z-100">
         {props.navigationLinks.map((item: any) => {
           return (
             <NavbarItem
