@@ -10,7 +10,9 @@ export default function DevelopmentAlertBanner() {
         opacity: display ? 1 : 0,
         transition: { duration: 2.2 },
       }}
-      className={`-z-1  w-full relative max-[760px]:absolute max-[760px]:bottom-0 isolate flex items-center gap-x-6 overflow-hidden bg-purple-100 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 ${
+      className={`-z-1   
+      w-full relative max-[760px]:absolute max-[760px]:bottom-0
+      isolate flex items-center gap-x-6 overflow-hidden bg-purple-100 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 ${
         display ? "" : `${setTimeout(() => useCloseDisplay(true), 4000)}`
       }`}
     >

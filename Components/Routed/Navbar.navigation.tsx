@@ -8,9 +8,18 @@ import {
   Button,
   NavbarMenuToggle,
   NavbarMenu,
+  Input,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../Shared/AcmeLogo.tsx";
 import { usePathname } from "next/navigation";
+
+const OnclickServiceComponent = () => {
+  return (
+    <>
+    
+    </>
+  );
+};
 
 const ResponsiveNavbarToggle = (props: any) => {
   return (
@@ -33,15 +42,19 @@ const ResponsiveNavbarToggle = (props: any) => {
             </NavbarItem>
           );
         })}
+        <NavbarItem className="servicesComponent">
+          <OnclickServiceComponent />
+        </NavbarItem>
       </NavbarMenu>
     </>
   );
 };
+
 const NavbarNavigation = (props: any) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <>
-      <Navbar isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+      <Navbar className="" isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
         <ResponsiveNavbarToggle
           navigationLinks={props.navigationLinks}
           isMenuOpen={isMenuOpen}
@@ -55,18 +68,25 @@ const NavbarNavigation = (props: any) => {
             return (
               <NavbarItem
                 key={item.name}
-                className={`${
-                  usePathname() === item.link ? "" : ""
-                }`}
+                className={`${usePathname() === item.link ? "" : ""}`}
               >
-                <Link href={item.link} className="navLinkActive">{item.name}</Link>
+                <Link href={item.link} className="navLinkActive">
+                  {item.name}
+                </Link>
               </NavbarItem>
             );
           })}
+
+          <NavbarItem className="servicesComponent">
+            <OnclickServiceComponent />
+          </NavbarItem>
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="hidden lg:flex">
-            <Link href="#" className="font-semibold text-inherit text-purple-700">
+            <Link
+              href="#"
+              className="font-semibold text-inherit text-purple-700"
+            >
               Login
             </Link>
           </NavbarItem>
