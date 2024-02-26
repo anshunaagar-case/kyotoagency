@@ -10,8 +10,7 @@ export default function DevelopmentAlertBanner() {
         opacity: display ? 1 : 0,
         transition: { duration: 2.2 },
       }}
-      className={`-z-1   
-      w-full relative max-[760px]:absolute max-[760px]:bottom-0
+      className={`z-1  w-full absolute bottom-0  
       isolate flex items-center gap-x-6 overflow-hidden bg-purple-100 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 ${
         display ? "" : `${setTimeout(() => useCloseDisplay(true), 4000)}`
       }`}
@@ -21,7 +20,7 @@ export default function DevelopmentAlertBanner() {
         aria-hidden="true"
       >
         <div
-          className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
+          className="aspect-[577/310] w-[36.0625rem] bg-gradient-to-r from-[#ff5b9f] to-[#6a5fff] opacity-30"
           style={{
             clipPath:
               "polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)",
@@ -41,17 +40,22 @@ export default function DevelopmentAlertBanner() {
         />
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <div className="text-sm leading-6 text-gray-900 flex">
-          <ul className="list-disc flex max-[760px]:flex-col">
+
+        <div className="text-sm leading-6 text-gray-900">
+          <ul className="list-disc flex flex-col">
             <li className="mx-2">
               <strong className="font-semibold">25 February 2024</strong>
             </li>
+
             <li className="list-none">
+            
               <p className="">
                 Currently in the development. Check back in future
               </p>
+            
             </li>
           </ul>
+
         </div>
 
         <a
