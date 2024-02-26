@@ -1,8 +1,19 @@
 import { FaXmark } from "react-icons/fa6";
-
+import React from "react";
+import { motion } from "framer-motion";
 export default function DevelopmentAlertBanner() {
+  const [display, useCloseDisplay] = React.useState(true);
   return (
-    <div className="-z-1  w-full relative max-[760px]:absolute max-[760px]:bottom-0 isolate flex items-center gap-x-6 overflow-hidden bg-purple-100 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{
+        opacity: display ? 1 : 0,
+        transition: { duration: 2.2 },
+      }}
+      className={`-z-1  w-full relative max-[760px]:absolute max-[760px]:bottom-0 isolate flex items-center gap-x-6 overflow-hidden bg-purple-100 px-6 py-2.5 sm:px-3.5 sm:before:flex-1 ${
+        display ? "" : `${setTimeout(() => useCloseDisplay(true), 4000)}`
+      }`}
+    >
       <div
         className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
         aria-hidden="true"
@@ -28,16 +39,19 @@ export default function DevelopmentAlertBanner() {
         />
       </div>
       <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <p className="text-sm leading-6 text-gray-900 flex">
+        <div className="text-sm leading-6 text-gray-900 flex">
           <ul className="list-disc flex max-[760px]:flex-col">
             <li className="mx-2">
               <strong className="font-semibold">25 February 2024</strong>
             </li>
-            <span className="">
-              Currently in the development. Check back in future
-            </span>
+            <li className="list-none">
+              <p className="">
+                Currently in the development. Check back in future
+              </p>
+            </li>
           </ul>
-        </p>
+        </div>
+
         <a
           href="https://github.com/anshunaagar-case/kyotoagency"
           target="_blank"
@@ -51,11 +65,12 @@ export default function DevelopmentAlertBanner() {
         <button
           type="button"
           className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
+          onClick={() => useCloseDisplay(false)}
         >
           <span className="sr-only">Dismiss</span>
           <FaXmark className="h-5 w-5 text-gray-900" aria-hidden="true" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 }

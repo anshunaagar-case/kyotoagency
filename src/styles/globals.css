@@ -3,16 +3,8 @@
 @tailwind utilities;
 
 
-.navLinkActive::after{
-    content: '';
-    width: 0%;
-    height: 3px;
-    background: rgb(91, 40, 173);
-    display: block;
-}
+/* navigation circle animation */
 
-.navLinkActive:hover::after{
-    width: 100%;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
+.navLinkActive{
+    color: white;
 }

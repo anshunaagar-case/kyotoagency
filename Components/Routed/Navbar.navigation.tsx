@@ -56,10 +56,10 @@ const NavbarNavigation = (props: any) => {
               <NavbarItem
                 key={item.name}
                 className={`${
-                  usePathname() === item.link ? "navLinkActive" : ""
+                  usePathname() === item.link ? "" : ""
                 }`}
               >
-                <Link href={item.link}>{item.name}</Link>
+                <Link href={item.link} className="navLinkActive">{item.name}</Link>
               </NavbarItem>
             );
           })}
