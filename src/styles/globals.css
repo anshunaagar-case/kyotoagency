@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 
+*{
+    transition: all 0.17777s ease;
+    box-sizing: border-box;
+}
+
 /* navigation circle animation */
 
 .underlinedRuler::after{

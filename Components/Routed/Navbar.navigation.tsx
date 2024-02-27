@@ -13,6 +13,7 @@ import {
 } from "@nextui-org/react";
 import { AcmeLogo } from "../Shared/AcmeLogo.tsx";
 import { usePathname } from "next/navigation";
+import { ThemeSwitcher } from "../Shared/Component/ThemeSwitcher.theme.tsx";
 
 const OnclickServiceComponent = (props: any) => {
   return (
@@ -38,8 +39,8 @@ const ResponsiveNavbarToggle = (props: any) => {
               customHeadStyles={"w-full text-white"}
               key={1}
             />
-            <Button className="w-full my-5 bg-white text-black">
-              Wanna connect with us? 
+            <Button className="w-full my-5 bg-white">
+              Wanna connect with us?
             </Button>
             {props.navigationLinks.map((item: any) => {
               return (
@@ -64,14 +65,17 @@ const NavbarNavigation = (props: any) => {
       <Navbar>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="sm:hidden"
+          className="min-[720px]:hidden mx-3"
         />
         <NavbarBrand>
           <AcmeLogo />
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
 
-        <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarContent
+          className="flex max-[720px]:hidden gap-4"
+          justify="center"
+        >
           {props.navigationLinks.map((item: any) => {
             return (
               <>
@@ -83,10 +87,10 @@ const NavbarNavigation = (props: any) => {
           })}
         </NavbarContent>
         <NavbarContent justify="end">
-          <NavbarItem className="hidden lg:flex">
-            <Link href="#">Login</Link>
-          </NavbarItem>
-          <NavbarItem>
+          <NavbarItem className="flex">
+            <div className="mx-3">
+              <ThemeSwitcher />
+            </div>
             <Button as={Link} color="primary" href="#" variant="flat">
               Sign Up
             </Button>
