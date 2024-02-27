@@ -8,14 +8,15 @@ import {
   Button,
   NavbarMenuToggle,
   NavbarMenu,
-  Input,
   NavbarMenuItem,
   useDisclosure,
   Modal,
   ModalBody,
   ModalContent,
-  ModalFooter,
+  Image,
   ModalHeader,
+  Card,
+  CardFooter,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../Shared/AcmeLogo.tsx";
 import { usePathname } from "next/navigation";
@@ -26,7 +27,16 @@ const OnclickServiceComponent = (props: any) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const serviceObject = [
     {
-      serviceName: "Video editing",
+      serviceName: "Web development",
+      serviceImage: "/infographics/web-dev.png",
+    },
+    {
+      serviceName: "Video Editing",
+      serviceImage: "/infographics/video-editing.png",
+    },
+    {
+      serviceName: "Photo editing",
+      serviceImage: "/infographics/photo-editing.png",
     },
   ];
   return (
@@ -40,9 +50,9 @@ const OnclickServiceComponent = (props: any) => {
         Services we offer ⭐
       </Button>
       <Modal
+        scrollBehavior="outside"
         aria-label="services"
-        size="5xl"
-        backdrop="blur"
+        size="full"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         motionProps={{
@@ -73,22 +83,33 @@ const OnclickServiceComponent = (props: any) => {
                 Our services
               </ModalHeader>
               <ModalBody>
-                {serviceObject.map((items: any) => {
-                  return (
-                    <div>
-                      <ServiceCard heading={items.serviceName} />
-                    </div>
-                  );
-                })}
+                <div className="flex flex-row justify-evenly">
+                  {serviceObject.map((items: any) => {
+                    return (
+                      <div className="mx-3 hover:rotate-6 pointer-events-auto cursor-pointer">
+                        <ServiceCard serviceImage={items.serviceImage} />
+                      </div>
+                    );
+                  })}
+
+                  <div>
+                    <Card
+                      isFooterBlurred={true}
+                      radius="lg"
+                      shadow="lg"
+                    >
+                      <Image
+                        className="object-cover"
+                        src="/infographics/image-random.png"
+                      />
+                      <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
+                        <p className="text-tiny">Available soon.</p>
+                        <Button>Read more</Button>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </div>
               </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Action
-                </Button>
-              </ModalFooter>
             </>
           )}
         </ModalContent>

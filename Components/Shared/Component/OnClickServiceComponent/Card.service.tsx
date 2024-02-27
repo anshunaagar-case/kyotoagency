@@ -11,11 +11,10 @@ const ServiceCard = (props: any) => {
         radius="lg"
         shadow="lg"
       >
-        <CardHeader>{props.heading}</CardHeader>
         <Image
           alt="Woman listing to music"
           className="object-cover"
-          src="https://www.marshallheadphones.com/on/demandware.static/-/Sites-zs-master-catalog/default/dw23d08e4c/images/marshall/headphones/major-iv/high-res/pos-marshall-major-iv-black-01.png"
+          src={props.serviceImage}
         />
 
         <CardFooter className="justify-between before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
