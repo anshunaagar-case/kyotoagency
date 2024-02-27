@@ -83,18 +83,18 @@ const OnclickServiceComponent = (props: any) => {
                 Our services
               </ModalHeader>
               <ModalBody>
-                <div className="flex flex-row justify-evenly">
+                <div className="flex flex-row justify-evenly max-[980px]:flex-col max-[980px]:grid max-[980px]:grid-cols-2">
                   {serviceObject.map((items: any) => {
                     return (
-                      <div className="mx-3 hover:rotate-6 pointer-events-auto cursor-pointer">
+                      <div className="mx-3 max-[980px]:my-2 hover:rotate-6 pointer-events-auto cursor-pointer">
                         <ServiceCard serviceImage={items.serviceImage} />
                       </div>
                     );
                   })}
-
                   <div>
                     <Card
                       isFooterBlurred={true}
+                      className="max-[980px]:hidden"
                       radius="lg"
                       shadow="lg"
                     >
