@@ -2,9 +2,19 @@ import { FaXmark } from "react-icons/fa6";
 import React from "react";
 import { motion } from "framer-motion";
 export default function DevelopmentAlertBanner() {
+  const [hide, setHide] = React.useState(false);
+  setTimeout(()=>{
+    setHide(false)
+  }, 4000)
   return (
     <>
-      <div className="w-full max-[760px]:absolute max-[760px]:bottom-0">
+      <motion.div
+        transition={{ duration: 0.5 }}
+        animate={{
+          opacity: hide ? 0 : 1,
+        }}
+        className="w-full max-[760px]:absolute max-[760px]:bottom-0"
+      >
         <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
           <div
             className="absolute left-[max(-7rem,calc(50%-52rem))] top-1/2 -z-10 -translate-y-1/2 transform-gpu blur-2xl"
@@ -59,11 +69,15 @@ export default function DevelopmentAlertBanner() {
               className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
             >
               <span className="sr-only">Dismiss</span>
-              <FaXmark className="h-5 w-5 text-gray-900" aria-hidden="true" />
+              <FaXmark
+                className="h-5 w-5 text-gray-900"
+                aria-hidden="true"
+                onClick={() => setHide(true)}
+              />
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

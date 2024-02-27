@@ -10,21 +10,75 @@ import {
   NavbarMenu,
   Input,
   NavbarMenuItem,
+  useDisclosure,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../Shared/AcmeLogo.tsx";
 import { usePathname } from "next/navigation";
 import { ThemeSwitcher } from "../Shared/Component/ThemeSwitcher.theme.tsx";
 
 const OnclickServiceComponent = (props: any) => {
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <>
       <Button
+        onClick={onOpen}
         className={props.customHeadStyles}
         color={props.color}
         variant={props.variant}
       >
         Services we offer ⭐
       </Button>
+      <Modal 
+        aria-label="services"
+        size="5xl"
+        backdrop="blur" 
+        isOpen={isOpen} 
+        onOpenChange={onOpenChange}
+        motionProps={{
+          variants: {
+            enter: {
+              y: 0,
+              opacity: 1,
+              transition: {
+                duration: 0.3,
+                ease: "easeIn",
+              },
+            },
+            exit: {
+              y: -20,
+              opacity: 0,
+              transition: {
+                duration: 0.2,
+                ease: "easeOut",
+              },
+            },
+          }
+        }}
+      >
+        <ModalContent>
+          {(onClose) => (
+            <>
+              <ModalHeader className="flex flex-col gap-1">Our services</ModalHeader>
+              <ModalBody>
+               
+              </ModalBody>
+              <ModalFooter>
+                <Button color="danger" variant="light" onPress={onClose}>
+                  Close
+                </Button>
+                <Button color="primary" onPress={onClose}>
+                  Action
+                </Button>
+              </ModalFooter>
+            </>
+          )}
+        </ModalContent>
+      </Modal>
     </>
   );
 };
