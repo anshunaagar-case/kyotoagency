@@ -20,9 +20,15 @@ import {
 import { AcmeLogo } from "../Shared/AcmeLogo.tsx";
 import { usePathname } from "next/navigation";
 import { ThemeSwitcher } from "../Shared/Component/ThemeSwitcher.theme.tsx";
+import ServiceCard from "../Shared/Component/OnClickServiceComponent/Card.service.tsx";
 
 const OnclickServiceComponent = (props: any) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const serviceObject = [
+    {
+      serviceName: "Video editing",
+    },
+  ];
   return (
     <>
       <Button
@@ -33,11 +39,11 @@ const OnclickServiceComponent = (props: any) => {
       >
         Services we offer ⭐
       </Button>
-      <Modal 
+      <Modal
         aria-label="services"
         size="5xl"
-        backdrop="blur" 
-        isOpen={isOpen} 
+        backdrop="blur"
+        isOpen={isOpen}
         onOpenChange={onOpenChange}
         motionProps={{
           variants: {
@@ -57,15 +63,23 @@ const OnclickServiceComponent = (props: any) => {
                 ease: "easeOut",
               },
             },
-          }
+          },
         }}
       >
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">Our services</ModalHeader>
+              <ModalHeader className="flex flex-col gap-1">
+                Our services
+              </ModalHeader>
               <ModalBody>
-               
+                {serviceObject.map((items: any) => {
+                  return (
+                    <div>
+                      <ServiceCard heading={items.serviceName} />
+                    </div>
+                  );
+                })}
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>
