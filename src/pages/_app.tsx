@@ -5,15 +5,16 @@ import { NextUIProvider } from "@nextui-org/react";
 import NavbarNavigation from "../../Components/Routed/Navbar.navigation";
 import DevelopmentAlertBanner from "../../Components/Shared/Component/Banner.dev.tsx";
 import { Inter } from "next/font/google";
- 
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function App({ Component, pageProps }: AppProps) {
   const navbarLinkObject = [
+    { link: "/", name: "Home" },
+    { link: "/", name: "About us" },
     { link: "/", name: "Features" },
-    { link: "/", name: "Customers" },
-    { link: "/", name: "Integrations" },
+    { link: "/", name: "Projects" },
+    { link: "/", name: "Services we offer", customStyle: true },
   ];
   return (
     <>
@@ -22,10 +23,10 @@ export default function App({ Component, pageProps }: AppProps) {
           font-family: ${inter.style.fontFamily};
         }
       `}</style>
-      <div className="development-informative-section">
-        <DevelopmentAlertBanner />
-      </div>
       <NextUIProvider>
+        <div className="development-informative-section">
+          <DevelopmentAlertBanner />
+        </div>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <NavbarNavigation navigationLinks={navbarLinkObject} />
           <Component {...pageProps} />
