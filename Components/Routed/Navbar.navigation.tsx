@@ -53,6 +53,8 @@ const OnclickServiceComponent = (props: any) => {
         scrollBehavior="outside"
         aria-label="services"
         size="full"
+        backdrop="blur"
+        className="max-[980px]:bg-inherit max-[980px]:shadow-none"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         motionProps={{
@@ -83,7 +85,7 @@ const OnclickServiceComponent = (props: any) => {
                 Our services
               </ModalHeader>
               <ModalBody>
-                <div className="flex flex-row justify-evenly max-[980px]:flex-col max-[980px]:grid max-[980px]:grid-cols-2">
+                <div className="flex flex-row justify-evenly max-[980px]:flex-col max-[980px]:grid max-[980px]:grid-cols-1 max-[980px]:m-auto">
                   {serviceObject.map((items: any) => {
                     return (
                       <div className="mx-3 max-[980px]:my-2 hover:rotate-6 pointer-events-auto cursor-pointer">
