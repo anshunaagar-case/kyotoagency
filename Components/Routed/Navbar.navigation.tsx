@@ -9,16 +9,52 @@ import {
   NavbarMenuToggle,
   NavbarMenu,
   Input,
+  NavbarMenuItem,
 } from "@nextui-org/react";
 import { AcmeLogo } from "../Shared/AcmeLogo.tsx";
 import { usePathname } from "next/navigation";
 
-const OnclickServiceComponent = () => {
-  return <></>;
+const OnclickServiceComponent = (props: any) => {
+  return (
+    <>
+      <Button
+        className={props.customHeadStyles}
+        color="secondary"
+        variant="faded"
+      >
+        Services we offer ⭐
+      </Button>
+    </>
+  );
 };
 
 const ResponsiveNavbarToggle = (props: any) => {
-  return <></>;
+  return (
+    <>
+      <NavbarMenu>
+        <NavbarMenuItem>
+          <div className="items-center">
+            <OnclickServiceComponent
+              customHeadStyles={"w-full text-white"}
+              key={1}
+            />
+            <Button className="w-full my-5 bg-white text-black">
+              Wanna connect with us? 
+            </Button>
+            {props.navigationLinks.map((item: any) => {
+              return (
+                <>
+                  <NavbarItem key={item.name} className="p-4 underlinedRuler">
+                    <Link href={item.link}>{item.name}</Link>
+                  </NavbarItem>
+                </>
+              );
+            })}
+          </div>
+        </NavbarMenuItem>
+      </NavbarMenu>
+    </>
+  );
 };
 
 const NavbarNavigation = (props: any) => {
@@ -26,10 +62,15 @@ const NavbarNavigation = (props: any) => {
   return (
     <>
       <Navbar>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
         <NavbarBrand>
           <AcmeLogo />
           <p className="font-bold text-inherit">ACME</p>
         </NavbarBrand>
+
         <NavbarContent className="hidden sm:flex gap-4" justify="center">
           {props.navigationLinks.map((item: any) => {
             return (
@@ -51,6 +92,7 @@ const NavbarNavigation = (props: any) => {
             </Button>
           </NavbarItem>
         </NavbarContent>
+        <ResponsiveNavbarToggle navigationLinks={props.navigationLinks} />
       </Navbar>
     </>
   );
