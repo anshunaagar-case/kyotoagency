@@ -2,22 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
-*{
-    transition: all 0.17777s ease;
-    box-sizing: border-box;
+* {
+  transition: all 0.17777s ease;
+  box-sizing: border-box;
 }
 
 /* navigation circle animation */
 
-.underlinedRuler::after{
-    content: ""; 
-    width: 100%;
-    height: 1px; 
-    background: rgba(194, 194, 194, 0.13);
-    display: block;
+.underlinedRuler::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: rgba(194, 194, 194, 0.13);
+  display: block;
 }
 
-.gracia-color{
-    color: #b6b6b615;
+.gracia-color {
+  color: #b6b6b615;
 }
