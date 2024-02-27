@@ -96,7 +96,7 @@ const OnclickServiceComponent = (props: any) => {
                   <div>
                     <Card
                       isFooterBlurred={true}
-                      className="max-[980px]:hidden"
+                      className="max-[1280px]:hidden"
                       radius="lg"
                       shadow="lg"
                     >

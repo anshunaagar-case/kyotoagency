@@ -6,7 +6,7 @@ const ServiceCard = (props: any) => {
     <>
       {/* enter tailwind height and width only */}
       <Card
-        className={`w-[300px] h-[300px] max-[980px]:w-[250px] max-[980px]:h-[250px] border-none`}
+        className={`w-[300px] h-[300px] border-none`}
         isFooterBlurred
         radius="lg"
         shadow="lg"
