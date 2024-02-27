@@ -14,7 +14,6 @@ export default function App({ Component, pageProps }: AppProps) {
     { link: "/", name: "About us" },
     { link: "/", name: "Features" },
     { link: "/", name: "Projects" },
-    { link: "/", name: "Services we offer", customStyle: true },
   ];
   return (
     <>

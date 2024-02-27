@@ -20,8 +20,8 @@ const OnclickServiceComponent = (props: any) => {
     <>
       <Button
         className={props.customHeadStyles}
-        color="secondary"
-        variant="faded"
+        color={props.color}
+        variant={props.variant}
       >
         Services we offer ⭐
       </Button>
@@ -36,10 +36,12 @@ const ResponsiveNavbarToggle = (props: any) => {
         <NavbarMenuItem>
           <div className="items-center">
             <OnclickServiceComponent
-              customHeadStyles={"w-full text-white"}
+              color="secondary"
+              variant="ghost"
+              customHeadStyles={"w-full"}
               key={1}
             />
-            <Button className="w-full my-5 bg-white">
+            <Button className="w-full my-5 bg-white text-black border-collapse border">
               Wanna connect with us?
             </Button>
             {props.navigationLinks.map((item: any) => {
@@ -85,13 +87,18 @@ const NavbarNavigation = (props: any) => {
               </>
             );
           })}
+          <OnclickServiceComponent
+            customHeadStyles={"w-auto"}
+            color="secondary"
+            variant="shadow"
+          />
         </NavbarContent>
         <NavbarContent justify="end">
           <NavbarItem className="flex">
             <div className="mx-3">
               <ThemeSwitcher />
             </div>
-            <Button as={Link} color="primary" href="#" variant="flat">
+            <Button as={Link} color="secondary" href="#" variant="flat">
               Sign Up
             </Button>
           </NavbarItem>

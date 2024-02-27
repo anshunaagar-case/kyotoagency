@@ -16,7 +16,7 @@ export const ThemeSwitcher = () => {
     <div>
       <Dropdown className="overflow-hidden">
         <DropdownTrigger>
-          <Button isIconOnly variant="bordered">
+          <Button isIconOnly variant="faded">
             {theme === "dark" ? (
               <HiOutlineSun className="text-xl" />
             ) : (
@@ -36,7 +36,7 @@ export const ThemeSwitcher = () => {
               suppressHydrationWarning
               className="aligh-right text-right h-auto p-0 bg-transparent"
             >
-              Dark Mode
+                Dark Mode
               <HiOutlineMoon className="text-xl" />
             </Button>
           </DropdownItem>
