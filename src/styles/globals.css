@@ -1,6 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
+
 
 * {
   transition: all 0.17777s ease;
@@ -19,4 +21,23 @@
 
 .gracia-color {
   color: #b6b6b615;
+}
+
+.maskClipper {
+  background: rgba(210, 142, 255, 0.15);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px 0 rgba(121, 10, 212, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  mask-image: url("/mask-ellipse.svg");
+  mask-size: 25px;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 111;
+  mask-repeat: no-repeat;
+  pointer-events: none;
 }
