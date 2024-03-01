@@ -1,14 +1,16 @@
-import "@/styles/globals.css";
+import NavbarNavigation from "../../Components/Routed/Navbar.navigation";
+import DevelopmentAlertBanner from "../../Components/Shared/Component/Banner.dev.tsx";
+import useMousePointerCoordinates from "@/utils/UseMousePosition.mouseDom.tsx";
+import { useState, useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { NextUIProvider } from "@nextui-org/react";
-import NavbarNavigation from "../../Components/Routed/Navbar.navigation";
-import DevelopmentAlertBanner from "../../Components/Shared/Component/Banner.dev.tsx";
-import { Inter } from "next/font/google";
-import useMousePointerCoordinates from "@/utils/UseMousePosition.mouseDom.tsx";
+import { Inter, Rubik_Moonrocks } from "next/font/google";
 import { motion } from "framer-motion";
+import "@/styles/globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+const rubikMoonrock = Rubik_Moonrocks({ weight: "400", subsets: ["latin"] });
 
 const CursorableMouse = () => {
   const { xCoordinate, yCoordinate } = useMousePointerCoordinates();
@@ -34,6 +36,13 @@ const CursorableMouse = () => {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [delayOnloadComponent, useDelayOnloadComponent] = useState(false);
+  useEffect(() => {
+    const delayOnloadTimeout = setTimeout(() => {
+      useDelayOnloadComponent(true);
+    }, 3000);
+    return () => clearTimeout(delayOnloadTimeout);
+  }, []);
   const navbarLinkObject = [
     { link: "/", name: "Home" },
     { link: "/", name: "About us" },
@@ -46,13 +55,16 @@ export default function App({ Component, pageProps }: AppProps) {
         html {
           font-family: ${inter.style.fontFamily};
         }
+        .moon-rock {
+          font-family: ${rubikMoonrock.style.fontFamily};
+        }
       `}</style>
       <NextUIProvider>
         <div className="development-informative-section">
           <DevelopmentAlertBanner />
         </div>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <CursorableMouse />
+          {delayOnloadComponent && <CursorableMouse />}
           <NavbarNavigation navigationLinks={navbarLinkObject} />
           <Component {...pageProps} />
         </ThemeProvider>

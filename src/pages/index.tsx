@@ -1,10 +1,20 @@
 import Image from "next/image";
+
 export default function Home() {
   return (
     <>
-      <div className="parentcontainer">
-        <section className="header-container">
-          <h1 className="text">Hello World</h1>
+      <div className="container m-auto h-auto">
+        <section className="header-container grid grid-cols-2 h-[80vh] max-[760px]:h-[110vh]  max-[760px]:flex max-[760px]:flex-col">
+          <div className="texting p-6 h-auto max-[760px]:p-12">
+            <h1 className="text-7xl text-start  moon-rock max-[760px]:w-full">
+              Exquisite creations by the team!
+            </h1>
+            <p className="text-xl my-4 w-[70%] text-gray-500">
+              We craft stunning visual stories, blending creativity and
+              technology to bring your vision to life with cinematic flair.
+            </p>
+          </div>
+          <div className="imagery h-auto">imagery</div>
         </section>
       </div>
     </>

@@ -3,7 +3,6 @@
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap");
 
-
 * {
   transition: all 0.17777s ease;
   box-sizing: border-box;
@@ -40,4 +39,13 @@
   z-index: 111;
   mask-repeat: no-repeat;
   pointer-events: none;
+}
+
+@font-face {
+  font-family: "Rubik Moonrocks";
+  src: url("/fonts/rubik-moonrock/RubikMoonrocks-Regular.ttf");
+}
+
+.rubik-moonrocks {
+  font-family: "Rubik Moonrocks", inherit;
 }

@@ -158,7 +158,7 @@ const NavbarNavigation = (props: any) => {
       <Navbar>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          className="min-[720px]:hidden mx-3"
+          className="min-[800px]:hidden mx-3"
         />
         <NavbarBrand>
           <AcmeLogo />
@@ -166,7 +166,7 @@ const NavbarNavigation = (props: any) => {
         </NavbarBrand>
 
         <NavbarContent
-          className="flex max-[720px]:hidden gap-4"
+          className="flex max-[800px]:hidden gap-4"
           justify="center"
         >
           {props.navigationLinks.map((item: any) => {
