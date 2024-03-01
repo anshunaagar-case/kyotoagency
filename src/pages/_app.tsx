@@ -26,7 +26,7 @@ const CursorableMouse = () => {
             duration: 0.25,
           },
         }}
-        className="maskClipper"
+        className="maskClipper max-[800px]:hidden"
       >
         jack
       </motion.div>
@@ -35,7 +35,6 @@ const CursorableMouse = () => {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-
   const navbarLinkObject = [
     { link: "/", name: "Home" },
     { link: "/", name: "About us" },
@@ -57,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <DevelopmentAlertBanner />
         </div>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        <CursorableMouse />
+          <CursorableMouse />
           <NavbarNavigation navigationLinks={navbarLinkObject} />
           <Component {...pageProps} />
         </ThemeProvider>
