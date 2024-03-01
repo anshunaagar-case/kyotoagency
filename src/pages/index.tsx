@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Button } from "@nextui-org/react";
 
 export default function Home() {
   return (
@@ -13,8 +14,9 @@ export default function Home() {
               We craft stunning visual stories, blending creativity and
               technology to bring your vision to life with cinematic flair.
             </p>
+            <Button className="bg-black/20 text-white w-[200px] h-[60px] rounded-lg"></Button>
           </div>
-          <div className="imagery h-auto">imagery</div>
+          <div className="imagery h-auto"></div>
         </section>
       </div>
     </>
