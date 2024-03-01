@@ -36,13 +36,14 @@ const CursorableMouse = () => {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [delayOnloadComponent, useDelayOnloadComponent] = useState(false);
+  const [delayCursorComponent, useDelayCursorComponent] = useState(false);
   useEffect(() => {
     const delayOnloadTimeout = setTimeout(() => {
-      useDelayOnloadComponent(true);
+      useDelayCursorComponent(true);
     }, 3000);
     return () => clearTimeout(delayOnloadTimeout);
   }, []);
+
   const navbarLinkObject = [
     { link: "/", name: "Home" },
     { link: "/", name: "About us" },
@@ -64,7 +65,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <DevelopmentAlertBanner />
         </div>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {delayOnloadComponent && <CursorableMouse />}
+          {delayCursorComponent && <CursorableMouse />}
           <NavbarNavigation navigationLinks={navbarLinkObject} />
           <Component {...pageProps} />
         </ThemeProvider>
