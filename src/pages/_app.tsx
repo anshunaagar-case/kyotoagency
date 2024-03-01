@@ -1,7 +1,6 @@
 import NavbarNavigation from "../../Components/Routed/Navbar.navigation";
 import DevelopmentAlertBanner from "../../Components/Shared/Component/Banner.dev.tsx";
 import useMousePointerCoordinates from "@/utils/UseMousePosition.mouseDom.tsx";
-import { useState, useEffect } from "react";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { NextUIProvider } from "@nextui-org/react";
@@ -36,13 +35,6 @@ const CursorableMouse = () => {
 };
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [delayCursorComponent, useDelayCursorComponent] = useState(false);
-  useEffect(() => {
-    const delayOnloadTimeout = setTimeout(() => {
-      useDelayCursorComponent(true);
-    }, 3000);
-    return () => clearTimeout(delayOnloadTimeout);
-  }, []);
 
   const navbarLinkObject = [
     { link: "/", name: "Home" },
@@ -65,7 +57,7 @@ export default function App({ Component, pageProps }: AppProps) {
           <DevelopmentAlertBanner />
         </div>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {delayCursorComponent && <CursorableMouse />}
+        <CursorableMouse />
           <NavbarNavigation navigationLinks={navbarLinkObject} />
           <Component {...pageProps} />
         </ThemeProvider>
