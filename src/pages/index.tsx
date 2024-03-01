@@ -9,7 +9,7 @@ export default function Home() {
             <h1 className="text-6xl text-start  moon-rock max-[760px]:w-full">
               Exquisite creations by the team!
             </h1>
-            <p className="text-xl max-[760px]:text-sm  my-4 w-[70%] max-[760px]:w-full  text-gray-500">
+            <p className="text-xl max-[760px]:text-base  my-4 w-[70%] max-[760px]:w-full  text-gray-500">
               We craft stunning visual stories, blending creativity and
               technology to bring your vision to life with cinematic flair.
             </p>
