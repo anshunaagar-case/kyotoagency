@@ -54,7 +54,7 @@ const OnclickServiceComponent = (props: any) => {
         aria-label="services"
         size="full"
         backdrop="blur"
-        className="max-[980px]:bg-inherit max-[980px]:shadow-none"
+        className="bg-inherit max-[980px]:shadow-none"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         motionProps={{
@@ -155,7 +155,7 @@ const NavbarNavigation = (props: any) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   return (
     <>
-      <Navbar>
+      <Navbar className="bg-transparent">
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="min-[800px]:hidden mx-3"
