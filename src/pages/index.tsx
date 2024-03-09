@@ -28,7 +28,7 @@ export default function Home() {
           )}
 
           <div className="texting p-6 h-auto max-[760px]:p-12">
-            <h1 className="text-7xl text-start  moon-rock max-[760px]:w-full">
+            <h1 className="text-6xl text-start  moon-rock max-[760px]:w-full">
               Exquisite creations by the team!
             </h1>
             <p className="text-xl max-[760px]:text-base  my-4 w-[70%] max-[760px]:w-full  text-gray-500">
