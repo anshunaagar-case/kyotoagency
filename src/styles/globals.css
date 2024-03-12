@@ -41,11 +41,18 @@
   pointer-events: none;
 }
 
-@font-face {
-  font-family: "Rubik Moonrocks";
-  src: url("/fonts/rubik-moonrock/RubikMoonrocks-Regular.ttf");
-}
-
-.rubik-moonrocks {
-  font-family: "Rubik Moonrocks", inherit;
+.classbased-grid {
+  height: inherit;
+  width: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background-image:
+      linear-gradient(to right, rgb(203 213 225) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(203, 213, 225) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  background-position: center center;
+  opacity: 0.3;
+  z-index: -1;
 }
