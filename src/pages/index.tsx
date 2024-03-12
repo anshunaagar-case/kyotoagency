@@ -15,7 +15,7 @@ const HeroSection = () => {
               Creative craftsmanship: Crafting code and Editing Videos. Which is
               all about!~
             </h1>
-            <div className="buttonsec my-4 max-[780px]:w-full m-auto max-[780px]:flex max-[780px]:flex-col max-[780px]:items-center">
+            <div className="buttonsec my-3 max-[780px]:w-full m-auto max-[780px]:flex max-[780px]:flex-col max-[780px]:justify-center max-[780px]:items-center">
               <Button
                 color="secondary"
                 startContent={<FaRegPaperPlane />}

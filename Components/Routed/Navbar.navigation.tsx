@@ -162,7 +162,7 @@ const NavbarNavigation = (props: any) => {
         />
         <NavbarBrand>
           <AcmeLogo />
-          <p className="font-bold text-inherit">ACME</p>
+          <p className="font-bold text-inherit">Craftsman Labs.</p>
         </NavbarBrand>
 
         <NavbarContent
