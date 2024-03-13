@@ -30,7 +30,7 @@ const HeroSection = () => {
                 variant="ghost"
                 className={`max-[780px]:mb-3 max-[780px]:w-[80%] max-[780px]:mx-0 mx-3`}
               >
-                We're on github.!
+                We &lsquo re on github.!
               </Button>
             </div>
           </div>
