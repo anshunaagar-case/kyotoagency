@@ -15,7 +15,7 @@ const HeroSection = () => {
         <div className="wrapper w-full">
           <br />
           <div className="typography-text  my-8 flex items-center font-semibold justify-center flex-col ">
-            <div className="info-arrow relative">
+            <div className="info-arrow">
               <HeroSectionBlob />
             </div>
             <h1 className="text-4xl text-center w-[60%] max-[780px]:text-start max-[780px]:w-[80%] max-[780px]:text-3xl">
@@ -55,9 +55,9 @@ const Home = () => {
         <section className="hero-section w-full h-screen ">
           <HeroSection />
         </section>
-        <section className="second-lander-section h-screen bg-black text-white">
+        <section className="second-lander-section overflow-x-hidden h-screen bg-black text-white">
           <LiquifiedWave />
-          <h1 className="text-2xl">Melting and liquifying metal 🏢</h1>
+          <h1 className="text-2xl">Hello, world!</h1>
         </section>
         <section className="third-lander-section h-screen">
           <h1>Animation to be done here 💀</h1>
