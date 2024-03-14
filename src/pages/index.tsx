@@ -18,7 +18,7 @@ const HeroSection = () => {
             <div className="info-arrow relative">
               <HeroSectionBlob />
             </div>
-            <h1 className="text-4xl text-center w-[60%] max-[780px]:text-start max-[780px]:w-[80%]">
+            <h1 className="text-4xl text-center w-[60%] max-[780px]:text-start max-[780px]:w-[80%] max-[780px]:text-3xl">
               Creative craftsmanship: Crafting code and Editing Videos. Which is
               all about!~
             </h1>
