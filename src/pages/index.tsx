@@ -55,9 +55,12 @@ const Home = () => {
         <section className="hero-section w-full h-screen ">
           <HeroSection />
         </section>
-        <section className="second-lander-section h-screen">
+        <section className="second-lander-section h-screen bg-black text-white">
           <LiquifiedWave />
-          <h1 className="text-2xl">Hello, world</h1>
+          <h1 className="text-2xl">Melting and liquifying metal 🏢</h1>
+        </section>
+        <section className="third-lander-section h-screen">
+          <h1>Animation to be done here 💀</h1>
         </section>
       </div>
     </>

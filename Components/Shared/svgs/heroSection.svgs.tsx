@@ -1,13 +1,8 @@
-import { useTheme } from 'next-themes'
-
-
 const LiquifiedWave = () => {
-  const themeBoolHook = useTheme()
-  const isDark = themeBoolHook.theme === 'dark' ? true : false
   return (
     <>
       <svg
-      className="bg-transparent overflow-hidden"
+      className="bg-transparent"
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -39,7 +34,7 @@ const LiquifiedWave = () => {
           <rect x="250" width="7.69%" height="75.96859132421812" rx="15"></rect>
           <rect x="300" width="7.69%" height="79.45506169990097" rx="15"></rect>
         </g>
-        <g fill={`${isDark ? "#000" : "#fff"}`} className={`transition-0}`}>
+        <g fill="hsl(0, 0, 0)">
           <rect
             x="25"
             y="17.56531280975338"
