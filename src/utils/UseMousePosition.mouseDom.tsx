@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 
+
 const useMousePointerCoordinates = () => {
-  const [mouseValue, setMouseValue] = useState({xCoordinate: 0, yCoordinate: 0});
+  const [mouseValue, setMouseValue] = useState({
+    xCoordinate: 0,
+    yCoordinate: 0,
+  });
   const updateMouseEvent = (event: any) => {
     setMouseValue({ xCoordinate: event.clientX, yCoordinate: event.clientY });
   };

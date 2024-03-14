@@ -2,6 +2,10 @@ import React from "react";
 import { Button } from "@nextui-org/react";
 import { FaRegPaperPlane, FaGithubAlt } from "react-icons/fa6";
 import { motion } from "framer-motion";
+import {
+  HeroSectionBlob,
+  LiquifiedWave,
+} from "../../Components/Shared/svgs/heroSection.svgs.tsx";
 
 const HeroSection = () => {
   return (
@@ -11,6 +15,9 @@ const HeroSection = () => {
         <div className="wrapper w-full">
           <br />
           <div className="typography-text  my-8 flex items-center font-semibold justify-center flex-col ">
+            <div className="info-arrow relative">
+              <HeroSectionBlob />
+            </div>
             <h1 className="text-4xl text-center w-[60%] max-[780px]:text-start max-[780px]:w-[80%]">
               Creative craftsmanship: Crafting code and Editing Videos. Which is
               all about!~
@@ -48,10 +55,8 @@ const Home = () => {
         <section className="hero-section w-full h-screen ">
           <HeroSection />
         </section>
-        <div className="breaker">
-          <br />
-        </div>
         <section className="second-lander-section h-screen">
+          <LiquifiedWave />
           <h1 className="text-2xl">Hello, world</h1>
         </section>
       </div>

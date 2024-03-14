@@ -1,6 +1,7 @@
 import NavbarNavigation from "../../Components/Routed/Navbar.navigation";
 import DevelopmentAlertBanner from "../../Components/Shared/Component/Banner.dev.tsx";
 import useMousePointerCoordinates from "@/utils/UseMousePosition.mouseDom.tsx";
+// import useMousePointerCondition from "@/utils/UseMousePointerCondition.mouseDom.tsx";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";
 import { NextUIProvider } from "@nextui-org/react";
@@ -13,6 +14,7 @@ const rubikMoonrock = Rubik_Moonrocks({ weight: "400", subsets: ["latin"] });
 
 const CursorableMouse = () => {
   const { xCoordinate, yCoordinate } = useMousePointerCoordinates();
+  // const {pointerCondition} = useMousePointerCondition()
   const maskSize = 50;
   return (
     <>
@@ -22,13 +24,12 @@ const CursorableMouse = () => {
             yCoordinate - maskSize / 4
           }px`,
           transition: {
-            type: "tween",
+            type: "spring",
             duration: 0.25,
           },
         }}
         className="maskClipper max-[800px]:hidden"
       >
-        jack
       </motion.div>
     </>
   );
