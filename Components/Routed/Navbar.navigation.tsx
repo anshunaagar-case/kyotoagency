@@ -135,6 +135,9 @@ const ResponsiveNavbarToggle = (props: any) => {
             <Button className="w-full my-5 bg-white text-black border-collapse border">
               Wanna connect with us?
             </Button>
+             <Button as={Link} className="w-full my-2 bg-white" color="secondary" href="#" variant="flat">
+              Sign Up
+            </Button>
             {props.navigationLinks.map((item: any) => {
               return (
                 <>
@@ -189,7 +192,7 @@ const NavbarNavigation = (props: any) => {
             <div className="mx-3">
               <ThemeSwitcher />
             </div>
-            <Button as={Link} color="secondary" href="#" variant="flat">
+            <Button as={Link} className="max-[600px]:hidden" color="secondary" href="#" variant="flat">
               Sign Up
             </Button>
           </NavbarItem>

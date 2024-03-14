@@ -10,7 +10,7 @@ import {
 const HeroSection = () => {
   return (
     <>
-      <div className="initial-container w-full h-full relative">
+      <div className=" w-full h-full relative">
         <div className="classbased-grid"></div>
         <div className="wrapper w-full">
           <br />
@@ -51,7 +51,7 @@ const HeroSection = () => {
 const Home = () => {
   return (
     <>
-      <div className="root-container">
+      <div className="root-container m-auto">
         <section className="hero-section w-full h-screen ">
           <HeroSection />
         </section>
