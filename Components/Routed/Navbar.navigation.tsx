@@ -192,7 +192,7 @@ const NavbarNavigation = (props: any) => {
             <div className="mx-3">
               <ThemeSwitcher />
             </div>
-            <Button as={Link} className="max-[600px]:hidden" color="secondary" href="#" variant="flat">
+            <Button as={Link} className="max-[1000px]:hidden" color="secondary" href="#" variant="flat">
               Sign Up
             </Button>
           </NavbarItem>
